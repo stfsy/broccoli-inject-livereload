@@ -1,0 +1,27 @@
+{
+  "name": "broccoli-inject-livereload",
+  "version": "0.1.0",
+  "description": "Broccoli plugin for injecting livereload script into HTML",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dremora/broccoli-inject-livereload"
+  },
+  "keywords": [
+    "broccoli",
+    "broccoli-plugin",
+    "livereload"
+  ],
+  "author": "Kirill Korolyov <kirill.korolyov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dremora/broccoli-inject-livereload/issues"
+  },
+  "homepage": "https://github.com/Dremora/broccoli-inject-livereload",
+  "dependencies": {
+    "broccoli-caching-writer": "^0.5.4",
+    "mkdirp": "^0.5.0",
+    "walk-sync": "^0.1.3"
+  }
+}
