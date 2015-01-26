@@ -47,7 +47,6 @@ InjectLivereload.prototype = Object.create(CachingWriter.prototype);
 InjectLivereload.prototype.constructor = InjectLivereload;
 
 InjectLivereload.prototype.updateCache = function (srcDir, destDir) {
-  console.log('updateCache');
   walkSync(srcDir).forEach(function (relativePath) {
     if (relativePath.slice(-1) !== '/') {
       handleFile(srcDir, destDir, relativePath);
