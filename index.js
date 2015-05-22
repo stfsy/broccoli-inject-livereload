@@ -4,14 +4,15 @@ var mkdirp = require('mkdirp');
 var fs = require('fs');
 var walkSync = require('walk-sync');
 
-var port = 35729;
-
 function InjectLivereload(inputTree, options) {
   if (!(this instanceof InjectLivereload)) {
     return new InjectLivereload(inputTree, options);
   }
 
   this.enforceSingleInputTree = true;
+
+  options = options || {};
+  this.port = options.port || 35729;
 
   CachingWriter.apply(this, arguments);
 }
@@ -38,7 +39,7 @@ InjectLivereload.prototype.handleFile = function (srcDir, destDir, relativePath)
     "<!-- livereload snippet -->",
     "<script>document.write('<script src=\"http://'",
     " + (location.host || 'localhost').split(':')[0]",
-    " + ':" + port + "/livereload.js?snipver=1\"><\\/script>')",
+    " + ':" + this.port + "/livereload.js?snipver=1\"><\\/script>')",
     "</script>",
     ""
   ].join('\n');
