@@ -15,3 +15,16 @@ var injectLivereload = require('broccoli-inject-livereload');
 var public = injectLivereload('public');
 
 ```
+
+## Set custom livereload-port
+
+You can set a custom livereload port via options hash:
+
+```javascript
+var injectLivereload = require('broccoli-inject-livereload');
+
+var public = injectLivereload('public' {
+  port: 12345
+});
+
+```
