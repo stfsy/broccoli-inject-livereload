@@ -14,6 +14,9 @@
     "livereload"
   ],
   "author": "Kirill Korolyov <kirill.korolyov@gmail.com>",
+  "maintainers": [
+    "Stefan Pfaffel <stfsy@outlook.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stfsy/broccoli-inject-livereload/issues"
