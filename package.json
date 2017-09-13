@@ -3,7 +3,17 @@
   "version": "0.2.0",
   "description": "Broccoli plugin for injecting livereload script into HTML",
   "main": "lib/index.js",
-  "scripts": {},
+  "scripts": {
+    "test-watch": "mocha test/spec --watch --check-leaks",
+    "test": "mocha test/spec --check-leaks",
+    "preversion": "npm run test",
+    "version": "npm run changelog && git add -A CHANGELOG.md",
+    "postversion": "git push origin master && git push origin master --tags",
+    "release-major": "npm version major -m \"chore(release): v%s\"",
+    "release-minor": "npm version minor -m \"chore(release): v%s\"",
+    "release-patch": "npm version patch -m \"chore(release): v%s\"",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/stfsy/broccoli-inject-livereload"
