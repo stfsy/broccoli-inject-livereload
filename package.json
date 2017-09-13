@@ -2,7 +2,7 @@
   "name": "broccoli-inject-livereload",
   "version": "0.2.0",
   "description": "Broccoli plugin for injecting livereload script into HTML",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {},
   "repository": {
     "type": "git",
