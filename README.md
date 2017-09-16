@@ -9,31 +9,45 @@
 [![Github issues](https://img.shields.io/github/issues/stfsy/broccoli-inject-livereload.svg)](https://github.com/stfsy/broccoli-inject-livereload/issues)
 [![License](https://img.shields.io/npm/l/broccoli-inject-livereload.svg)](https://github.com/stfsy/broccoli-inject-livereload/blob/master/LICENSE)
 
-This plugin injects a reference to the livereload script into your HTML files.
-Please note that the plugin will only modify files with `.html` extension and simply copy everything else.
+This plugin injects a reference to the livereload script into your HTML files. Please note that the plugin will only modify files with `.html` extension that match the **target** property and simply copy everything else.
 
 ## Installation
 
 `npm install broccoli-inject-livereload --save-dev`
 
-## Usage
+## Example using a single html target 
+```js
+const BroccoliInjectLivereload = require('broccoli-inject-livereload')
 
-```javascript
-var injectLivereload = require('broccoli-inject-livereload');
+const reloadable = new BroccoliInjectLivereload('app', {
+    target: 'index.html'
+})
 
-var public = injectLivereload('public');
-
+module.exports = reloadable
 ```
 
-## Set custom livereload-port
+## Example using a regular expression to target multiple html files
+```js
+const BroccoliInjectLivereload = require('broccoli-inject-livereload')
 
-You can set a custom livereload port via options hash:
+const reloadable = new BroccoliInjectLivereload('app', {
+    target: /^[a-zA-Z._-]+.html$/
+})
 
-```javascript
-var injectLivereload = require('broccoli-inject-livereload');
+module.exports = reloadable
+```
 
-var public = injectLivereload('public', {
-  port: 12345
-});
+## Example using a costum port
 
+```js
+const BroccoliInjectLivereload = require('broccoli-inject-livereload')
+
+const reloadable = new BroccoliInjectLivereload('app', {
+    target: 'index.html', 
+    livereload: {
+        port: 12345
+    }
+})
+
+module.exports = reloadable
 ```
