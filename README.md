@@ -51,3 +51,7 @@ const reloadable = new BroccoliInjectLivereload('app', {
 
 module.exports = reloadable
 ```
+
+## License
+
+This project is distributed under the MIT license.
