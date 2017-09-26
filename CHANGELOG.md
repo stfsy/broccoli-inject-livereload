@@ -4,14 +4,13 @@
 
 ### Features
 
-* add broccoli 2 compatible plugin implementation ([2872ed3](https://github.com/stfsy/broccoli-inject-livereload/commit/2872ed3))
+* add broccoli 1 compatible plugin implementation ([de3d336](https://github.com/stfsy/broccoli-inject-livereload/commit/de3d336))
 
 
 ### BREAKING CHANGES
 
-* - Port is still configurable, but now has to supplied using a nested livereload
- object
-- Configure the target (html) files using the required target property and a
+* Port is still configurable, but now has to be supplied using a nested livereload object.
+Configure the target (html) files using the required target property and a
 JavaScript Regular Expression
 
 ```js
