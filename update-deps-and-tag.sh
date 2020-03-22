@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 git checkout master
 npm outdated
 npm update
