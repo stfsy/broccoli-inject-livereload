@@ -30,19 +30,19 @@ describe('BroccoliInjectLivereload', () => {
 
         it('returns content unchanged', () => {
             mockModuleContext._building = true
-            const buffer = BroccoliInjectLivereload.prototype.processString.call(mockModuleContext, new Buffer(htmlString), 'index.html')
+            const buffer = BroccoliInjectLivereload.prototype.handleContent.call(mockModuleContext, 'index.html', new Buffer(htmlString))
             expect(buffer.toString('utf-8')).to.equal(htmlString)
         })
 
         it('adds the livereload tag', () => {
-            const buffer = BroccoliInjectLivereload.prototype.processString.call(mockModuleContext, new Buffer(htmlString), 'index.html')
+            const buffer = BroccoliInjectLivereload.prototype.handleContent.call(mockModuleContext, 'index.html', new Buffer(htmlString))
             expect(buffer.toString('utf-8')).not.to.equal(htmlString)
             expect(buffer.toString('utf-8')).to.contain('livereload.js')
             expect(buffer.toString('utf-8')).to.contain('123456')
         })
 
         it('does not add the livereload tag', () => {
-            const buffer = BroccoliInjectLivereload.prototype.processString.call(mockModuleContext, new Buffer(htmlString), 'dex.html')
+            const buffer = BroccoliInjectLivereload.prototype.handleContent.call(mockModuleContext, 'dex.html', new Buffer(htmlString))
             expect(buffer.toString('utf-8')).to.equal(htmlString)            
         })
     })
