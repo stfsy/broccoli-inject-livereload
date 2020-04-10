@@ -63,17 +63,24 @@ describe('Injector', () => {
         })
     })
     describe('.inject', () => {
-        let html = null
-        beforeEach(() => {
-            html = `
-                <html>
-                <head></head>
-                <body></body>
-                </html>
-            `
-        })
         it('adds the livereload script', () => {
+            const html = `
+            <html>
+            <head></head>
+            <body></body>
+            </html>
+        `
             const htmlWithLiveReload = injector.inject(html).toString('utf-8')
+            expect(htmlWithLiveReload.indexOf('<div id="test-div"></div>')).to.be.greaterThan(-1)
+        })
+        it('adds a head tag and the livereload script', () => {
+            const html = `
+            <html>
+            <body></body>
+            </html>
+        `
+            const htmlWithLiveReload = injector.inject(html).toString('utf-8')
+            expect(htmlWithLiveReload.indexOf('<head>')).to.be.greaterThan(-1)
             expect(htmlWithLiveReload.indexOf('<div id="test-div"></div>')).to.be.greaterThan(-1)
         })
     })
