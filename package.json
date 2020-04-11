@@ -4,10 +4,8 @@
   "description": "Broccoli plugin for injecting livereload script into HTML",
   "main": "lib/index.js",
   "scripts": {
-    "test-serve": "cd test/fixtures && node run-broccoli serve",
     "test-watch": "mocha test/spec --watch --check-leaks",
-    "test-win": "mocha test/spec --check-leaks --timeout 50000",
-    "test": "npm run test-serve & sleep 5 && mocha test/spec --check-leaks --timeout 50000",
+    "test": "mocha test/spec --check-leaks --timeout 50000",
     "preversion": "npm run test",
     "version": "npm run changelog && git add -A CHANGELOG.md",
     "postversion": "git push origin master && git push origin master --tags",
@@ -40,6 +38,7 @@
   },
   "devDependencies": {
     "broccoli": "^3.4.1",
+    "broccoli-test-runner": "^1.0.0",
     "chai": "^4.2.0",
     "conventional-changelog-cli": "^1.3.22",
     "mocha": "^3.5.3",
