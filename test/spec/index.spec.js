@@ -8,7 +8,6 @@ const expect = require('chai').expect
 const puppeteer = require('puppeteer')
 
 describe('BroccoliInjectLivereload', () => {
-    let browser = null
     let page = null
 
     before(() => {
@@ -16,15 +15,14 @@ describe('BroccoliInjectLivereload', () => {
     })
     before(() => {
         return puppeteer.launch({ headless: true }).then((b) => {
-            browser = b
-            return browser.newPage()
+            return b.newPage()
         }).then((p) => {
             page = p
         })
     })
     after(() => {
         return runner.stop().then(() => {
-            browser.close()
+            page.browser().close()
         })
     })
     it('should inject livereload tag into test.html', () => {
