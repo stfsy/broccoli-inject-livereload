@@ -1,3 +1,20 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/stfsy/broccoli-inject-livereload/compare/v1.2.0...v1.4.0) (2020-04-12)
+
+
+### Bug Fixes
+
+* build fails if no head tag present ([ba91555](https://github.com/stfsy/broccoli-inject-livereload/commit/ba91555))
+
+
+### Features
+
+* update dependencies ([94b488b](https://github.com/stfsy/broccoli-inject-livereload/commit/94b488b))
+* update node-html-light ([aaf3042](https://github.com/stfsy/broccoli-inject-livereload/commit/aaf3042))
+* use broccoli plugin adapter ([e9ee9e1](https://github.com/stfsy/broccoli-inject-livereload/commit/e9ee9e1))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/stfsy/broccoli-inject-livereload/compare/v1.2.0...v1.3.0) (2020-03-22)
 
