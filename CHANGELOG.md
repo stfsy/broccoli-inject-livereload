@@ -1,3 +1,13 @@
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/stfsy/broccoli-inject-livereload/compare/v1.4.0...v1.4.1) (2020-09-16)
+
+
+### Bug Fixes
+
+* cli shorthands cause crash ([66374ba](https://github.com/stfsy/broccoli-inject-livereload/commit/66374ba))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/stfsy/broccoli-inject-livereload/compare/v1.2.0...v1.4.0) (2020-04-12)
 
