@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 MAIN_BRANCH='master'
 DEV_BRANCH='dev'
 
@@ -8,24 +10,32 @@ npm install
 npm outdated || true
 
 npm update
-has_updates=$(git diff --name-only | grep package -c)
-
-if [[ $has_updates -gt "0" ]]; then
+if [[ `git status --porcelain` ]]; then
+    has_updates='1'
     npm test
     git add package*
     git commit -m "feat: update outdated dependencies"
 fi
 
 npm audit fix
-has_audit_fixes=$(git diff --name-only | grep package -c)
-
-if [[ $has_audit_fixes -gt "0" ]]; then
+if [[ `git status --porcelain` ]]; then
+    has_updates='1'
     npm test
     git add package*
     git commit -m "feat: update vulnerable dependencies"
 fi
 
-if [[ $has_updates -gt "0" ]] || [[ $has_audit_fixes -gt "0" ]]; then
+npm audit fix --force
+if [[ `git status --porcelain` ]]; then
+    has_updates='1'
+    set +e # unsetting this flag here because the breaking changes might cause us to break
+    npm test
+    git add package*
+    git commit -m "feat: update vulnerable dependencies"
+    set -e # setting the flag here again
+fi
+
+if [[ $has_updates -gt "0" ]]; then
     npm run release-minor
     git checkout $DEV_BRANCH || true
     git rebase $MAIN_BRANCH
