@@ -1,3 +1,14 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/stfsy/broccoli-inject-livereload/compare/v1.4.2...v1.5.0) (2021-02-09)
+
+
+### Features
+
+* update outdated dependencies ([6b9eb50](https://github.com/stfsy/broccoli-inject-livereload/commit/6b9eb50))
+* update vulnerable dependencies ([8df7cc3](https://github.com/stfsy/broccoli-inject-livereload/commit/8df7cc3))
+
+
+
 <a name="1.4.2"></a>
 ## [1.4.2](https://github.com/stfsy/broccoli-inject-livereload/compare/v1.4.0...v1.4.2) (2020-09-16)
 
