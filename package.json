@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/stfsy/broccoli-inject-livereload",
   "dependencies": {
-    "broccoli-plugin-adapter": "^1.2.1",
+    "broccoli-plugin-adapter": "^1.4.0",
     "node-html-light": "^1.4.0"
   },
   "devDependencies": {
