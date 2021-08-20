@@ -9,7 +9,11 @@ has_linebreak='false'
 text=''
 
 while IFS= read -r line; do
-    if [[ $line == "# "*  ]]; then
+    if echo $line | grep -q -E '^<a *'; then
+        continue
+    fi
+    
+    if echo $line | grep -q -E '^#[#]? [[]*|^<a *'; then
         if  [[ $first_release_processed == "false" ]]; then
             first_release_processed="true"
         else
