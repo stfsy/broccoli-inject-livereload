@@ -5,7 +5,7 @@ updates:
       - stfsy
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
     versioning-strategy: increase
 
   - package-ecosystem: github-actions
@@ -13,4 +13,4 @@ updates:
       - stfsy
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
