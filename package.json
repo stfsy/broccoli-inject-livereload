@@ -43,7 +43,7 @@
     "chai": "^4.3.7",
     "conventional-changelog-cli": "^2.2.2",
     "istanbul": "^0.4.5",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "puppeteer": "^19.4.1"
   }
 }
